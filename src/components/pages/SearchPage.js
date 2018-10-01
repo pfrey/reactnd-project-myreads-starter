@@ -25,7 +25,7 @@ class SearchPage extends React.Component {
     .then(response => {
       book.shelf = shelf;
       this.setState(state => ({
-        books: state.books.filter(b => b.id !== book.id).concat([book])
+        books: state.books.filter(currentBook => currentBook.id !== book.id).concat([book])
       }));
     });
   }

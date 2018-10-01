@@ -23,7 +23,7 @@ class HomePage extends React.Component {
     .then(response => {
       book.shelf = shelf;
       this.setState(state => ({
-        books: state.books.filter(b => b.id !== book.id).concat([book])
+        books: state.books.filter(currentBook => currentBook.id !== book.id).concat([book])
       }));
     });
   }
@@ -36,9 +36,9 @@ class HomePage extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf updateBookShelf={this.updateBookShelf} name="Currently Reading" books={this.state.books.filter(b => b.shelf === "currentlyReading")} />
-            <Shelf updateBookShelf={this.updateBookShelf} name="Want to Read" books={this.state.books.filter(b => b.shelf === "wantToRead")} />
-            <Shelf updateBookShelf={this.updateBookShelf} name="Read" books={this.state.books.filter(b => b.shelf === "read")} />
+            <Shelf updateBookShelf={this.updateBookShelf} name="Currently Reading" books={this.state.books.filter(book => book.shelf === "currentlyReading")} />
+            <Shelf updateBookShelf={this.updateBookShelf} name="Want to Read" books={this.state.books.filter(book => book.shelf === "wantToRead")} />
+            <Shelf updateBookShelf={this.updateBookShelf} name="Read" books={this.state.books.filter(book => book.shelf === "read")} />
           </div>
         </div>
         <div className="open-search">
