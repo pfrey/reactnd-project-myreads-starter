@@ -43,10 +43,10 @@ class SearchPage extends React.Component {
       if(results.error) {
         return this.setState({ results: [] });
       } else {
-        results.forEach(currentBook => {
-          let found = this.state.books.filter(newBook => newBook.id === currentBook.id);
+        results.forEach(b => {
+          let found = this.state.books.filter(newBook => newBook.id === b.id);
           if(found[0]) {
-            currentBook.shelf = found[0].shelf;
+            b.shelf = found[0].shelf;
           }
         });
         return this.setState({ results: results });
