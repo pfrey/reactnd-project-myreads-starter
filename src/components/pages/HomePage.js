@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import { Link } from 'react-router-dom'
 import * as BooksAPI from '../../BooksAPI'
 import Shelf from '../Shelf'
@@ -14,7 +14,6 @@ class HomePage extends React.Component {
   componentDidMount() {
     BooksAPI.getAll()
     .then(response => {
-      console.log(response);
       this.setState({ books: response });
     });
   }

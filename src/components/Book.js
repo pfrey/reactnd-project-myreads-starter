@@ -1,12 +1,8 @@
-import React from "react"
+import React from 'react'
 import { Link } from 'react-router-dom'
 import * as BooksAPI from '../BooksAPI'
 
 class Shelf extends React.Component {
-  componentDidMount() {
-    console.log(this);
-  }
-
   render() {
     return (
       <li>

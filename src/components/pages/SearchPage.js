@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import { Link } from 'react-router-dom'
 import * as BooksAPI from '../../BooksAPI'
 import Book from '../Book'
@@ -16,7 +16,6 @@ class SearchPage extends React.Component {
   componentDidMount() {
     BooksAPI.getAll()
     .then(response => {
-      console.log(response);
       this.setState({ books: response });
     });
   }
@@ -41,7 +40,6 @@ class SearchPage extends React.Component {
     }
     BooksAPI.search(this.state.query.trim())
     .then(results => {
-      console.log(results);
       if(results.error) {
         return this.setState({ results: [] });
       } else {
